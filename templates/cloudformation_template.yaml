@@ -1,0 +1,15 @@
+Resources:
+  EnergyDataBucket:
+    Type: AWS::S3::Bucket
+    Properties:
+      BucketName: energy-data-lake
+
+  KinesisStream:
+    Type: AWS::Kinesis::Stream
+    Properties:
+      ShardCount: 1
+
+  SNSTopic:
+    Type: AWS::SNS::Topic
+    Properties:
+      TopicName: "EnergyAlerts"
